@@ -1,0 +1,12 @@
+- main [ref=e2]:
+  - region "Find today's epicenter." [ref=e3]:
+    - generic [ref=e5]:
+      - paragraph
+      - heading "Find today's epicenter." [level=1] [ref=e6]
+      - paragraph [ref=e7]: A new quake every day.
+      - button "Retry" [ref=e9] [cursor=pointer]
+      - generic [ref=e10]:
+        - paragraph
+        - generic [aria-hidden] [ref=e11]: ·
+        - paragraph
+      - status [ref=e12]: Seismographs warming up. Try again.

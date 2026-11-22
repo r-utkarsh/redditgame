@@ -1,0 +1,14 @@
+# @file        .gitattributes
+# @purpose     Normalizes text files to LF line endings in the repository so scripts and checks behave the same on Windows and Linux.
+# @layer       repository configuration
+# @security    none
+# @spec        02-architecture-and-headers.md section 3; P0-scaffold.md step 0
+# @tests       none (line ending behavior is checked by the scripts themselves)
+
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary

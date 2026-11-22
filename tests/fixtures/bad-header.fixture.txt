@@ -1,0 +1,7 @@
+/**
+ * @file        bad-header.ts
+ * @purpose
+ * @keyFunctions
+ *   - missingExport(): void
+ */
+export function present(): void {}

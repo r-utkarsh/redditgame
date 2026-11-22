@@ -1,0 +1,51 @@
+{
+  "private": true,
+  "name": "fault-lines",
+  "version": "0.0.0",
+  "license": "BSD-3-Clause",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "deploy": "npm run verify && devvit upload",
+    "dev": "devvit playtest",
+    "launch": "npm run deploy && devvit publish",
+    "lint": "eslint .",
+    "prettier": "prettier --write .",
+    "typecheck": "tsc --build",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "headers": "tsx scripts/check-headers.ts",
+    "filemap": "tsx scripts/filemap.ts",
+    "filemap:check": "tsx scripts/filemap.ts --check",
+    "secret-scan": "tsx scripts/secret-scan.ts",
+    "simulate": "tsx scripts/simulate.ts",
+    "verify": "npm run typecheck && npm run lint && npm run headers && npm run filemap:check && npm run secret-scan && npm run build && npm run test:coverage && tsx scripts/verify-audit.ts",
+    "verify:full": "npm run verify && npm run simulate"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "dependencies": {
+    "@devvit/web": "0.15.3",
+    "express": "5.3.0"
+  },
+  "devDependencies": {
+    "@devvit/start": "0.15.3",
+    "@eslint/js": "10.0.1",
+    "@tailwindcss/vite": "4.3.5",
+    "@types/express": "5.0.6",
+    "@types/node": "^24.13.3",
+    "@vitest/coverage-v8": "5.1.0",
+    "devvit": "0.15.3",
+    "eslint": "10.14.0",
+    "fast-check": "^4.10.2",
+    "globals": "17.14.0",
+    "prettier": "3.9.10",
+    "tailwindcss": "4.3.5",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.2",
+    "vite": "8.3.7",
+    "vitest": "5.1.0"
+  }
+}

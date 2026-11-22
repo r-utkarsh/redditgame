@@ -1,0 +1,12 @@
+- main [ref=f4e2]:
+  - region "Find today's epicenter." [ref=f4e3]:
+    - generic [ref=f4e5]:
+      - paragraph [ref=f4e6]: Fault Lines • SUN 22 NOV
+      - heading "Find today's epicenter." [level=1] [ref=f4e7]
+      - paragraph [ref=f4e8]: A new quake every day.
+      - button "Play" [ref=f4e10] [cursor=pointer]
+      - generic [ref=f4e11]:
+        - paragraph [ref=f4e12]: 3 day streak
+        - generic [aria-hidden] [ref=f4e13]: ·
+        - paragraph [ref=f4e14]: Best 3
+      - status [ref=f4e15]

@@ -1,0 +1,46 @@
+<!--
+  @file        src/client/splash.html
+  @purpose     Inline entry document for the Fault Lines splash screen.
+  @layer       client (HTML shell)
+  @domIds      splash-root, splash-art, splash-eyebrow, splash-streak, splash-best, splash-separator, play-button, splash-status
+  @security    S9: no inline script or style; the CSP meta allows only bundled assets.
+  @tests       tests/meta/headers.test.ts; tests/meta/clientCsp.test.ts
+  @spec        02-architecture-and-headers.md section 3; 03-tdd-and-testing.md section 5b; D-003; D-006
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self'"
+    />
+    <title>Fault Lines</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <main id="splash-root" class="splash">
+      <section id="splash-card" class="splash-card" aria-labelledby="splash-title">
+        <canvas id="splash-art" class="splash-art" width="600" height="600" aria-hidden="true"></canvas>
+        <div class="splash-copy">
+          <p id="splash-eyebrow" class="eyebrow"></p>
+          <h1 id="splash-title" class="splash-title">Find today's epicenter.</h1>
+          <p class="splash-description">A new quake every day.</p>
+          <div class="splash-action">
+            <button id="play-button" class="primary-button" type="button" hidden>
+              Play
+            </button>
+          </div>
+          <div class="streak-block">
+            <p id="splash-streak" class="splash-streak"></p>
+            <span id="splash-separator" class="splash-separator" aria-hidden="true">·</span>
+            <p id="splash-best" class="splash-best"></p>
+          </div>
+          <p id="splash-status" class="status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./splash.ts"></script>
+  </body>
+</html>

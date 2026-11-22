@@ -1,0 +1,69 @@
+<!--
+  @file        src/client/game.html
+  @purpose     Expanded entry document for the Fault Lines map, controls and result card.
+  @layer       client (HTML shell)
+  @domIds      game-root, map-canvas, game-date, game-streak, game-hint, station-chips, lock-button, game-status, result-card, overlay
+  @security    S9: no inline script or style; the CSP meta allows only bundled assets.
+  @tests       tests/meta/headers.test.ts; tests/meta/clientCsp.test.ts
+  @spec        02-architecture-and-headers.md section 3; 03-tdd-and-testing.md section 5b; D-003; D-006
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self'"
+    />
+    <title>Fault Lines</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <main id="game-root" class="game">
+      <canvas
+        id="map-canvas"
+        class="map-canvas"
+        width="800"
+        height="800"
+        tabindex="0"
+        role="application"
+        aria-label="Epicenter map. Arrow keys move the pin; hold Shift for 10 km steps."
+        aria-describedby="game-hint"
+      ></canvas>
+
+      <header class="game-bar">
+        <div class="game-title-block">
+          <p class="eyebrow">Fault Lines</p>
+          <p id="game-date" class="game-date"></p>
+        </div>
+        <p id="game-streak" class="game-streak"></p>
+      </header>
+
+      <p id="game-hint" class="game-hint">
+        Far stations shake later. Find where it started.
+      </p>
+
+      <section class="controls" aria-label="Stations and lock in">
+        <div id="station-chips" class="chips"></div>
+        <button id="lock-button" class="primary-button" type="button" disabled>
+          Lock in
+        </button>
+      </section>
+
+      <p id="game-status" class="game-status" role="status" aria-live="polite">
+      </p>
+
+      <section
+        id="result-card"
+        class="result-card"
+        role="region"
+        aria-label="Your result"
+        hidden
+      ></section>
+
+      <div id="overlay" class="overlay" hidden></div>
+    </main>
+    <script type="module" src="./game.ts"></script>
+  </body>
+</html>

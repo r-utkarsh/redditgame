@@ -1,0 +1,16 @@
+# @file        .gitignore
+# @purpose     Keeps secrets, dependencies, build output, coverage and local Devvit auth files out of the public repository.
+# @layer       repository configuration
+# @security    S13: prevents .env files and Devvit auth state from being committed.
+# @spec        02-architecture-and-headers.md section 3; P0-scaffold.md step 0
+# @tests       tests/meta/noSecrets.test.ts (added with the secret scan)
+
+.env*
+node_modules/
+dist/
+.devvit/
+.devvit-token
+coverage/
+*.log
+.DS_Store
+Thumbs.db
